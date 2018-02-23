@@ -6,8 +6,6 @@ const createResolver = require('postcss-import-webpack-resolver');
 const rucksack = require('rucksack-css');
 const short = require('postcss-short');
 
-
-const autoprefixer = require('autoprefixer');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -37,10 +35,15 @@ const postCSSLoaderOptions = {
   // https://github.com/facebook/create-react-app/issues/2677
   ident: 'postcss',
   plugins: () => [
-    require('postcss-flexbugs-fixes'),
-    autoprefixer({
-      flexbox: 'no-2009',
+    cssImport({
+      resolve: createResolver({
+        module: ['src/styles', 'src', 'node_modules']
+      })
     }),
+    require('postcss-flexbugs-fixes'),
+    rucksack,
+    short,
+    cssnext
   ],
 };
 
