@@ -55,10 +55,15 @@ const postCSSLoaderOptions = {
   // https://github.com/facebook/create-react-app/issues/2677
   ident: 'postcss',
   plugins: () => [
-    require('postcss-flexbugs-fixes'),
-    autoprefixer({
-      flexbox: 'no-2009',
+    cssImport({
+      resolve: createResolver({
+        module: ['src/styles', 'src', 'node_modules']
+      })
     }),
+    require('postcss-flexbugs-fixes'),
+    rucksack,
+    short,
+    cssnext
   ],
 };
 
@@ -110,6 +115,13 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
+      '@': path.resolve(__dirname, '../src/'),
+      Components: path.resolve(__dirname, '../src/components'),
+      Containers: path.resolve(__dirname, '../src/containers'),
+      Reducers: path.resolve(__dirname, '../src/reducers'),
+      Actions: path.resolve(__dirname, '../src/actions'),
+      Styles: path.resolve(__dirname, '../src/styles'),
+      Images: path.resolve(__dirname, '../src/images')
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
