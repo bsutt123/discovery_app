@@ -53,3 +53,7 @@ gem 'figaro'
 
 #include devise for user authentication and management
 gem 'devise'
+
+#include HTTParty to make outside HTTP requests
+
+gem 'httparty'
