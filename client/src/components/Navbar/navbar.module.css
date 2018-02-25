@@ -1,0 +1,25 @@
+@import 'colors.css';
+
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  background: linear-gradient(to right, var(--colorPrimaryLight), var(--colorPrimaryDark));
+  padding: 1rem;
+  color: var(--colorWhite);
+}
+
+
+.logo {
+  font-size: 1rem;
+}
+
+.navList {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  align-items: center;
+  
+  & > *:not(:last-child) {
+    margin-right: 1rem;
+  }
+}
