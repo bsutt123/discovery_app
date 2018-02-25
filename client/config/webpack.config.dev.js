@@ -119,7 +119,8 @@ module.exports = {
       Reducers: path.resolve(__dirname, '../src/reducers'),
       Actions: path.resolve(__dirname, '../src/actions'),
       Styles: path.resolve(__dirname, '../src/styles'),
-      Images: path.resolve(__dirname, '../src/images')
+      Images: path.resolve(__dirname, '../src/images'),
+      Pages: path.resolve(__dirname, '../src/pages')
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
