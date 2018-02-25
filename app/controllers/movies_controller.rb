@@ -16,13 +16,7 @@ class MoviesController < ApplicationController
     parsed_response = JSON.parse(response.body)
     render json: parsed_response
   end
-
-  def latest
-    response = self.class.get("/movie/latest?api_key=#{ENV["MOVIE_API_KEY"]}")
-    parsed_response = JSON.parse(response.body)
-    render json: parsed_response
-  end
-
+  
   def top_rated
     response = self.class.get("/movie/top_rated?api_key=#{ENV["MOVIE_API_KEY"]}")
     parsed_response = JSON.parse(response.body)
