@@ -4,13 +4,13 @@
   display: grid;
   grid-template-columns: auto 1fr;
   background: linear-gradient(to right, var(--colorPrimaryLight), var(--colorPrimaryDark));
-  padding: 1rem;
+  padding: .25rem 1rem; 
   color: var(--colorWhite);
 }
 
 
 .logo {
-  font-size: 1rem;
+  height: 4rem;
 }
 
 .navList {
