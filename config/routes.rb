@@ -4,20 +4,18 @@ Rails.application.routes.draw do
 
   scope '/api' do
     scope '/movies' do
-      #create scopes for common types
-      get '/popular', to: 'movies#popular'
-      get '/top_rated', to: 'movies#top_rated'
-      get '/upcoming', to: 'movies#upcoming'
+      #create route to display filtered movies
+      get '/filter', to: 'movies#filter'
     
-      #create a route for the search parameter
+      #create a route to search for movies
       get '/search', to: 'movies#search'
     end
 
     scope '/tv_shows' do 
-      get '/popular', to: 'tv_shows#popular'
-      get '/top_rated', to: 'tv_shows#top_rated'
-      get '/upcoming', to: 'tv_shows#upcoming'
+      #create a route to show filtere tv_shows
+      get '/filter', to: 'tv_shows#filter'
 
+      #create a route to search for tv_shows
       get '/search', to: 'tv_shows#search'
     end
   end
