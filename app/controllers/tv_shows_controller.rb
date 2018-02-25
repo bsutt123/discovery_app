@@ -5,27 +5,29 @@ class TvShowsController < ApplicationController
   
   base_uri "https://api.themoviedb.org/3"
   #GET popular movies
-  def popular
-    response = self.class.get("/tv/popular?api_key=#{ENV["MOVIE_API_KEY"]}")
-    parsed_response = JSON.parse(response.body)
-    render json: parsed_response
-  end
+  def filter
 
-  def upcoming
-    response = self.class.get("/tv/upcoming?api_key=#{ENV["MOVIE_API_KEY"]}")
-    parsed_response = JSON.parse(response.body)
-    render json: parsed_response
-  end
+    #define the params coming into the request
+    filter_param = params["filter"]
+    page = params["page"] || 1
 
-  def top_rated
-    response = self.class.get("/tv/top_rated?api_key=#{ENV["MOVIE_API_KEY"]}")
+    #generate response with HTTParty
+    response = self.class.get("/movie/#{filter_param}?api_key=#{ENV["MOVIE_API_KEY"]}&region=US&page=#{page}&include_adult=false")
+
+    #parse and render the response 
     parsed_response = JSON.parse(response.body)
     render json: parsed_response
   end
 
   def search
+    #define parameters of the search
     query = params["query"]
-    response = self.class.get("/search/tv?api_key=#{ENV["MOVIE_API_KEY"]}&language=en-US&query=#{query}&page=1&include_adult=false")
+    page = params["page"] || 1
+
+    #generate a response based on the params given
+    response = self.class.get("/search/movie?api_key=#{ENV["MOVIE_API_KEY"]}&language=en-US&query=#{query}&page=#{pages}&include_adult=false")
+
+    #parse and rener search response
     parsed_response = JSON.parse(response.body)
     render json: parsed_response
   end
