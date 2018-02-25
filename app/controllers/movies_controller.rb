@@ -25,7 +25,7 @@ class MoviesController < ApplicationController
     page = params["page"] || 1
 
     #generate a response based on the params given
-    response = self.class.get("/search/movie?api_key=#{ENV["MOVIE_API_KEY"]}&language=en-US&query=#{query}&page=#{pages}&include_adult=false")
+    response = self.class.get("/search/movie?api_key=#{ENV["MOVIE_API_KEY"]}&language=en-US&query=#{query}&page=#{page}&include_adult=false")
 
     #parse and rener search response
     parsed_response = JSON.parse(response.body)
