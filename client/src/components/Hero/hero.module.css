@@ -1,0 +1,26 @@
+@import 'colors.css';
+
+.container {
+  position: relative;
+  height: 100vh;
+  background-color: var(--colorPrimaryDark);
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: .2;
+}
+
+.headingCon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
