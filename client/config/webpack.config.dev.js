@@ -37,7 +37,7 @@ const postCSSLoaderOptions = {
   plugins: () => [
     cssImport({
       resolve: createResolver({
-        module: ['src/styles', 'src', 'node_modules']
+        modules: ['src/styles', 'src', 'node_modules']
       })
     }),
     require('postcss-flexbugs-fixes'),
