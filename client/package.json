@@ -55,6 +55,7 @@
     "redux-thunk": "^2.2.0",
     "rucksack-css": "^1.0.2",
     "style-loader": "0.19.1",
+    "superagent": "^3.8.2",
     "svgr": "1.8.1",
     "sw-precache-webpack-plugin": "0.11.4",
     "thread-loader": "1.1.2",
