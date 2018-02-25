@@ -21,11 +21,11 @@ function updateMoviesBySearch(query, movies) {
 
 //use functions to make calls to the api
 function fetchMoviesByFilter(filter) {
-  return request.get('/api/movies/filter').query({ filter }).then(res =>  JSON.parse(res.text).results)
+  return request.get('/api/movies/filter').query({ filter }).then(res => JSON.parse(res.text).results)
 }
 
 function fetchMoviesBySearch(query) {
-  return request.get('/api/moves/search').query({ query }).then(res => JSON.parse(res.text).results)
+  return request.get('/api/movies/search').query({ query }).then(res => JSON.parse(res.text).results)
 }
 
 //combine 2 in a thunk
