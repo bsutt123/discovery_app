@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,400|Mukta+Malar:200,300,400');
+
+html {
+  font-size: responsive;
+}
+
 body {
   margin: 0;
   padding: 0;
