@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import styles from './movies.module.css'
 
+import SearchForMovies from 'Containers/SearchForMovies/SearchForMovies';
+
 class Movies extends Component {
   componentDidMount() {
     if (this.props.movies)  {
@@ -11,7 +13,10 @@ class Movies extends Component {
   render() {
     return(
       <div className={styles.container}>
-        I'm in Movies
+        <div className={styles.headingBox}>
+          <h1 className={styles.heading}> Find Movies you Love </h1>
+        </div>
+        <SearchForMovies />
         {console.log(this.props.movies)}
       </div>
     )
