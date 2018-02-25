@@ -12,10 +12,12 @@ const Home = (props) => {
   return (
     <div className={styles.container}>
       <Hero image={HeroImage}>
-        <h1 className={styles.heroMainHeading} > Discover your next show </h1>
-        <h3 className={styles.heroSubHeading} > Browse ... </h3>
-        <h3 className={styles.heroSubHeading} > Binge ... </h3>
-        <h3 className={styles.heroSubHeading} > Repeat </h3>
+        <div className={styles.headingBox}>
+          <h1 className={styles.heroMainHeading} > Discover your <br /> next show ... </h1>
+          <h3 className={styles.heroSubHeading} > Browse ... </h3>
+          <h3 className={styles.heroSubHeading} > Binge ... </h3>
+          <h3 className={styles.heroSubHeading} > Repeat </h3>
+        </div>
       </Hero>
     </div>
   )

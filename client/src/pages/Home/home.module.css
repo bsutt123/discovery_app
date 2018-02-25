@@ -12,17 +12,17 @@
   object-fit: cover;
   opacity: .3;
 }
-
+.headingBox {
+  max-width: 1000px;
+  text-align: left;
+  margin-left: 1rem;
+}
 .heroMainHeading { 
   font-size: responsive 25px 60px;
   font-range: 280px 1200px;
-  max-width: 1200px;
-  margin:auto;
 }
 
 .heroSubHeading {
   font-size: responsive 15px 30px;
   font-range: 280px 1200px;
-  max-width: 600px;
-  margin: auto;
 }
