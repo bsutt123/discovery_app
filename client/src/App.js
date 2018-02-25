@@ -15,15 +15,13 @@ class App extends Component {
     return (
       <div className="App">
         <Provider store={store} >
-          <div>
-            <Navbar />
             <Router>
               <div>
+                <Navbar Link={Link} />
                 <Route exact path="/" component={Home} />
                 <Route path="/movies" component={VisibleMovies} />
               </div>
             </Router>
-          </div>
         </Provider>
       </div>
     );
