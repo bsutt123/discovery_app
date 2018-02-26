@@ -20,18 +20,17 @@ class SearchBar extends Component {
   }
 
   submitForm(event) {
+    event.preventDefault();
     this.props.submitForm(this.state.search);
     this.setState({search: ''});
-    event.preventDefault();
   }
   render() {
     return (
       <div className={styles.container} >
-        <form>
-          <label> Search For Movies:
-            <input type="text" onChange={this.handleChange} value={this.state.search} className={styles.searchBox} />
-          </label>
-          <input type="submit" value="Submit" onClick={this.submitForm}/>
+        <form onSubmit={this.submitForm}>
+          <label className={styles.label}> <h4> Search For Movies: </h4> </label>
+          <input type="text" onChange={this.handleChange} value={this.state.search} className={styles.searchBox} />
+          <input type="submit" value="Search" className="btn" />
         </form>
       </div>
     )
