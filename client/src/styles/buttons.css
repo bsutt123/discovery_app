@@ -1,0 +1,21 @@
+@import 'colors.css';
+
+.btn {
+  border: 0;
+  box-shadow: 0;
+  padding:.25rem .5rem;
+  border-radius: 3px;
+  font-size: 1rem;
+  background-color: var(--colorPrimaryLight);
+  color: white;
+
+  &:hover {
+    background-color: var(--colorPrimaryDark);
+    color: var(--colorSecondary);
+  }
+}
+
+.btn-disabled {
+  background-color: var(--colorPrimaryDark);
+  color: var(--colorSecondary);
+}
