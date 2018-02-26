@@ -9,7 +9,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    submitForm: query => {
+    submitForm: (query) => {
       dispatch(setMoviesBySearch(query))
     }
   }
