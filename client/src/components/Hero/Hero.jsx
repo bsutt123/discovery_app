@@ -4,7 +4,7 @@ import styles from './hero.module.css';
 const Hero = ( {image, children} ) => {
   return (
     <div className={styles.container} >
-      <img src={image} alt="hero image" className={styles.image}/>
+      <img src={image} alt="hero" className={styles.image}/>
       <div className={styles.headingCon}>
           {children}
       </div>
