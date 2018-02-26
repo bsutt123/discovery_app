@@ -4,3 +4,18 @@
 .heading {
   font-size: 3rem;
 }
+
+.movieSelect {
+  display:grid;
+  grid-template-columns: 1fr;
+
+  & > * {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .movieSelect {
+    grid-template-columns: 1fr 1fr;
+  }
+}
