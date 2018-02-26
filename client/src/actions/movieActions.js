@@ -8,6 +8,7 @@ export const SEARCH_MOVIES = 'SEARCH_MOVIES';
 function updateMoviesByFilter(filter, movies) {
   return {
     type: SET_MOVIES_FILTER,
+    filter,
     movies
   };
 }
