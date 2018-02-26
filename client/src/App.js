@@ -6,7 +6,6 @@ import './App.css';
 import Navbar from 'Components/Navbar/Navbar';
 import Home from 'Pages/Home/Home';
 import VisibleMovies from 'Containers/VisibleMovies/VisibleMovies';
-import TvShows from 'Pages/TvShows/TvShows';
 
 import store from './store';
 
