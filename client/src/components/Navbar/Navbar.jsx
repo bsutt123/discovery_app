@@ -7,7 +7,7 @@ const Navbar = ({Link}) => {
   return (
     <div className={styles.container} >
       <div className={styles.logoBox}>
-        <Link to="/"> <img src={Logo} className={styles.logo}/> </Link>
+        <Link to="/"> <img src={Logo} className={styles.logo} alt="Dicovr Logo" /> </Link>
       </div>
       <div className={styles.navList} >
         <Link to="/movies"> <span className={styles.navItem}> Movies </span> </Link>
