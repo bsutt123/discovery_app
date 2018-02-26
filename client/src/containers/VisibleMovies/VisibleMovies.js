@@ -6,7 +6,8 @@ import Movies from 'Pages/Movies/Movies'
 
 const mapStateToProps = state => {
   return {
-    movies: state.movies
+    movies: state.movies,
+    moviesFilter: state.moviesFilter
   }
 }
 
@@ -14,6 +15,9 @@ const mapDispatchToProps = dispatch => {
   return {
     setMoviesByFilter: filter => {
       dispatch(setMoviesByFilter(filter))
+    },
+    setMoviesBySearch: query => {
+      dispatch(setMoviesBySearch(query))
     }
   }
 }
