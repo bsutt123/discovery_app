@@ -6,6 +6,7 @@ import './App.css';
 import Navbar from 'Components/Navbar/Navbar';
 import Home from 'Pages/Home/Home';
 import VisibleMovies from 'Containers/VisibleMovies/VisibleMovies';
+import TvShows from 'Pages/TvShows/TvShows';
 
 import store from './store';
 
@@ -19,6 +20,7 @@ class App extends Component {
                 <Navbar Link={Link} />
                 <Route exact path="/" component={Home} />
                 <Route path="/movies" component={VisibleMovies} />
+                <Route path='/tv' component={TvShows} />
               </div>
             </Router>
         </Provider>
