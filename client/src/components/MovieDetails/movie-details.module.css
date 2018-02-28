@@ -1,0 +1,43 @@
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: * auto;
+}
+
+.heroImage {
+  width: 100%;
+  opacity: 1;
+  margin: * auto;
+}
+
+
+.information {
+  max-width: 1000px;
+  margin: * auto;
+  padding: 1rem;
+
+  & > *:not(:last-child) {
+    margin-bottom: 2rem;
+
+    & > * {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.producerList {
+  list-style: none;
+  text-align: center;
+}
+
+.producerItem {
+  display: inline-block;
+  margin: .25rem .5rem;
+}
+
+
+.gridList {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr));
+  grid-gap: 1rem;
+}
