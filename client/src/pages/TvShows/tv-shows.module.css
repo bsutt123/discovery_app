@@ -1,0 +1,19 @@
+.heading {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.tvSelect {
+  display:grid;
+  grid-template-columns: 1fr;
+
+  & > * {
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .tvSelect {
+    grid-template-columns: 1fr 1fr;
+  }
+}
