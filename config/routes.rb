@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     
       #create a route to search for movies
       get '/search', to: 'movies#search'
+
+      #show view for an id
+      get '/:id', to: 'movies#show'
     end
 
     scope '/tv' do 
@@ -17,6 +20,9 @@ Rails.application.routes.draw do
 
       #create a route to search for tv_shows
       get '/search', to: 'tv_shows#search'
+
+      #show view for tv id
+      get '/:id', to: 'tv_shows#show'   
     end
   end
 end
