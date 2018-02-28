@@ -7,7 +7,9 @@ import styles from './tv-list.module.css';
 
 class TvList extends Component {
   componentDidMount() {
-    this.props.setFilter("popular");
+    if (this.props.tvShows.length === 0) {
+      this.props.setFilter("popular");
+    }
   }
 
   render() {
