@@ -5,7 +5,8 @@ import { setMoviesByFilter } from 'Actions/movieActions';
 
 const mapStateToProps = (state) => {
   return {
-    currentFilter: state.moviesFilter
+    currentFilter: state.moviesFilter,
+    filterType: 'movie'
   }
 }
 
