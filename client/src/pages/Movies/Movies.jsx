@@ -8,7 +8,7 @@ import MoviesFilterSetter from 'Containers/MovieFilterSetter/MovieFilterSetter';
 
 class Movies extends Component {
   componentDidMount() {
-    if (this.props.movies)  {
+    if (this.props.movies.length === 0)   {
       this.props.setMoviesByFilter("popular");
     }
   }
