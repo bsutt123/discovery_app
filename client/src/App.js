@@ -6,7 +6,9 @@ import './App.css';
 import Navbar from 'Components/Navbar/Navbar';
 import Home from 'Pages/Home/Home';
 import VisibleMovies from 'Containers/VisibleMovies/VisibleMovies';
+import VisibleMovieDetails from 'Containers/VisibleMovieDetails/VisibleMovieDetails';
 import TvShows from 'Pages/TvShows/TvShows';
+import VisibleTvShowDetails from 'Containers/VisibleTvShowDetails/VisibleTvShowDetails';
 
 import store from './store';
 
@@ -19,8 +21,10 @@ class App extends Component {
               <div>
                 <Navbar Link={Link} />
                 <Route exact path="/" component={Home} />
-                <Route path="/movies" component={VisibleMovies} />
-                <Route path='/tv' component={TvShows} />
+                <Route exact path="/movies" component={VisibleMovies} />
+                <Route exact path='/tv' component={TvShows} />
+                <Route path='/movies/:id' component={VisibleMovieDetails} />
+                <Route path='/tv/:id' component={VisibleTvShowDetails} />
               </div>
             </Router>
         </Provider>
