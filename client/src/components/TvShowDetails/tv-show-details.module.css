@@ -1,0 +1,52 @@
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: * auto;
+}
+
+.heroImage {
+  width: 100%;
+  opacity: 1;
+  margin: * auto;
+}
+
+
+.information {
+  max-width: 1000px;
+  margin: * auto;
+  padding: 1rem;
+
+  & >*:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  & > * {
+    & > * {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.gridList {
+  list-style: none;
+}
+
+.gridItem {
+  display: inline-block;
+  padding: .25rem
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr));
+  grid-gap: 1rem;
+}
+
+.seasonGrid {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(200px, 1fr));
+}
+
+.seasonPoster {
+  width: 100%;
+}
