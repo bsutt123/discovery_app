@@ -6,6 +6,7 @@
   background: linear-gradient(to right, var(--colorPrimaryLight), var(--colorPrimaryDark));
   padding: .25rem 1rem; 
   color: var(--colorWhite);
+  margin-bottom: 1rem;
 }
 
 
