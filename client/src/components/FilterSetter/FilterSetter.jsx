@@ -17,7 +17,7 @@ const FilterButton = ({name, setFilter, currentFilter, value}) => {
 }
 
 
-const FilterSetter = ({currentFilter, setFilter}) => {
+const FilterSetter = ({currentFilter, setFilter, filterType}) => {
   return (
     <div className={styles.container} >
       <div className={styles.headingBox}>
@@ -25,7 +25,7 @@ const FilterSetter = ({currentFilter, setFilter}) => {
       </div>
       <form className={styles.form} >
         <FilterButton name="popular" setFilter={setFilter} currentFilter={currentFilter} value="Popular" />
-        <FilterButton name="upcoming" setFilter={setFilter} currentFilter={currentFilter} value="Upcoming" />
+        { (filterType === "movie") && <FilterButton name="upcoming" setFilter={setFilter} currentFilter={currentFilter} value="Upcoming" /> }
         <FilterButton name="top_rated" setFilter={setFilter} currentFilter={currentFilter} value="Top Rated" />
       </form>
     </div>
