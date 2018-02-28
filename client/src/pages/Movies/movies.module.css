@@ -3,6 +3,7 @@
 
 .heading {
   font-size: 3rem;
+  margin-bottom: 2rem;
 }
 
 .movieSelect {
@@ -10,7 +11,7 @@
   grid-template-columns: 1fr;
 
   & > * {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 }
 
