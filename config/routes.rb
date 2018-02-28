@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       get '/search', to: 'movies#search'
     end
 
-    scope '/tv_shows' do 
+    scope '/tv' do 
       #create a route to show filtere tv_shows
       get '/filter', to: 'tv_shows#filter'
 
