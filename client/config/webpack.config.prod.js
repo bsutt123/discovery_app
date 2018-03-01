@@ -1,4 +1,9 @@
 'use strict';
+const cssnext = require('postcss-cssnext');
+const cssImport = require('postcss-import');
+const createResolver = require('postcss-import-webpack-resolver');
+const rucksack = require('rucksack-css');
+const short = require('postcss-short');
 
 const autoprefixer = require('autoprefixer');
 const path = require('path');
@@ -121,7 +126,8 @@ module.exports = {
       Reducers: path.resolve(__dirname, '../src/reducers'),
       Actions: path.resolve(__dirname, '../src/actions'),
       Styles: path.resolve(__dirname, '../src/styles'),
-      Images: path.resolve(__dirname, '../src/images')
+      Images: path.resolve(__dirname, '../src/images'),
+      Pages: path.resolve(__dirname, '../src/pages')
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
