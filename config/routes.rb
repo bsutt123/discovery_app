@@ -25,4 +25,9 @@ Rails.application.routes.draw do
       get '/:id', to: 'tv_shows#show'   
     end
   end
+
+  #fallback route for react-router
+  get '*path', to: "application#fallback_index_html", constraints: ->(request) do
+    !request.xhr? && request.format.html?
+  end
 end
