@@ -1,0 +1,11 @@
+{
+  "name": "list-of-ingredients",
+  "engines": {
+    "node": "9.3.0h"
+  },
+  "scripts": {
+    "build": "cd client && npm install && npm run build && cd ..",
+    "deploy": "cp -a client/build/. public/",
+    "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
+  }
+}
