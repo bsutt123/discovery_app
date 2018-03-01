@@ -55,5 +55,8 @@ gem 'figaro'
 gem 'devise'
 
 #include HTTParty to make outside HTTP requests
-
 gem 'httparty'
+
+#include VCR gem for testing purposes
+gem 'vcr', '~> 4.0'
+gem 'webmock'
