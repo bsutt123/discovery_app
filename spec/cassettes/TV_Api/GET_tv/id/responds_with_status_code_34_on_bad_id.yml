@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/tv/2691499?api_key=fb6a1d3f38c3d97f67df6d141f936f29&language=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After
+      Cache-Control:
+      - public, max-age=28800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 28 Feb 2018 23:38:31 GMT
+      Server:
+      - openresty
+      X-Memc:
+      - MISS
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '28800'
+      X-Memc-Key:
+      - '08f47b1dbead1288038b3e0f4ccba2bc'
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '37'
+      X-Ratelimit-Reset:
+      - '1519861120'
+      Content-Length:
+      - '84'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"status_code":34,"status_message":"The resource you requested could
+        not be found."}'
+    http_version: 
+  recorded_at: Wed, 28 Feb 2018 23:38:31 GMT
+recorded_with: VCR 4.0.0
