@@ -35,6 +35,7 @@ class MoviesController < ApplicationController
   def show
     movie_id = params["id"]
 
+    #create and parse response at an id
     response = self.class.get("/movie/#{movie_id}?api_key=#{ENV['MOVIE_API_KEY']}&language=en-US")
     parsed_response = JSON.parse(response.body)
     render json: parsed_response
