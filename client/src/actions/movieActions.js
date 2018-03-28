@@ -29,11 +29,11 @@ function updateMovieDetails(movie) {
 }
 
 //use functions to make calls to the api
-function fetchMoviesByFilter(filter) {
+function fetchMoviesByFilter(filter, page) {
   return request.get('/api/movies/filter').query({ filter }).then(res => JSON.parse(res.text).results)
 }
 
-function fetchMoviesBySearch(query) {
+function fetchMoviesBySearch(query, page) {
   return request.get('/api/movies/search').query({ query }).then(res => JSON.parse(res.text).results)
 }
 
