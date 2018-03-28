@@ -1,4 +1,4 @@
-import { SEARCH_TV, SET_TV_FILTER } from 'Actions/tvActions';
+import { SEARCH_TV, SET_TV_FILTER, SET_TV_PAGE } from 'Actions/tvActions';
 
 
 export default function tvFilterReducer(state = 'none', action) {
@@ -7,7 +7,7 @@ export default function tvFilterReducer(state = 'none', action) {
       return action.filter
     case SEARCH_TV:
       return 'none'
-    default: 
+    default:
       return state
   }
 }
