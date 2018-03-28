@@ -4,6 +4,7 @@ import styles from './tv-shows.module.css';
 import SearchForTv from 'Containers/SearchForTv/SearchForTv';
 import TvFilterSetter from 'Containers/TvFilterSetter/TvFilterSetter';
 import VisibleTvList from 'Containers/VisibleTvList/VisibleTvList';
+import PageControl from 'Components/PageControl/PageControl';
 
 const TvShows = () => {
   return (
@@ -14,6 +15,7 @@ const TvShows = () => {
           <SearchForTv />
           <TvFilterSetter />
         </div>
+        <PageControl />
         <VisibleTvList />
       </div>
     </div>
