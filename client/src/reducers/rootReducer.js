@@ -8,7 +8,10 @@ import movieDetails from './movieDetailsReducer';
 import tv from './tvReducer';
 import tvFilter from './tvFilterReducer';
 import tvDetails from './tvDetailsReducer';
-import tvPage from './tvPageReducer'
+import page from './pageReducer'
+
+import displayType from './displayReducer';
+import query from './queryReducer';
 
 
 const rootReducer = combineReducers({
@@ -18,7 +21,9 @@ const rootReducer = combineReducers({
   tv,
   tvFilter,
   tvDetails,
-  tvPage,
+  page,
+  displayType,
+  query,
 });
 
 export default rootReducer;
