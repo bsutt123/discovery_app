@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 
 import styles from './movies.module.css'
 
-import SearchForMovies from 'Containers/SearchForMovies/SearchForMovies';
-import VisibleMoviesList from 'Containers/VisibleMoviesList/VisibleMoviesList';
-import MoviesFilterSetter from 'Containers/MovieFilterSetter/MovieFilterSetter';
+import SearchForMovies from 'Containers/Movies/SearchForMovies';
+import VisibleMoviesList from 'Containers/Movies/VisibleMoviesList';
+import MoviesFilterSetter from 'Containers/Movies/MovieFilterSetter';
+import MoviePageControl from '../../containers/Movies/MoviePageControl';
 
 class Movies extends Component {
   componentDidMount() {
@@ -22,6 +23,7 @@ class Movies extends Component {
           <SearchForMovies />
           <MoviesFilterSetter />
         </div>
+        <MoviePageControl />
         <VisibleMoviesList />
       </div>
     )
