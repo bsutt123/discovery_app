@@ -5,10 +5,10 @@ import './App.css';
 
 import Navbar from 'Components/Navbar/Navbar';
 import Home from 'Pages/Home/Home';
-import VisibleMovies from 'Containers/VisibleMovies/VisibleMovies';
-import VisibleMovieDetails from 'Containers/VisibleMovieDetails/VisibleMovieDetails';
+import VisibleMovies from 'Containers/Movies/VisibleMovies';
+import VisibleMovieDetails from 'Containers/Movies/VisibleMovieDetails';
 import TvShows from 'Pages/TvShows/TvShows';
-import VisibleTvShowDetails from 'Containers/VisibleTvShowDetails/VisibleTvShowDetails';
+import VisibleTvShowDetails from 'Containers/Tv/VisibleTvShowDetails';
 
 import store from './store';
 
