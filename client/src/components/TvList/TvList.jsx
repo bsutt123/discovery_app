@@ -17,9 +17,10 @@ class TvList extends Component {
     return(
       <div className={styles.container}>
         { tvShows.length === 0 && <div> There are now Shows for that search </div>}
-        { tvShows.length !== 0 && tvShows.map((tvShow,index ) => {
-          return (<TvShow key={index} tvShow={tvShow} />)
-        })}
+        { tvShows.length !== 0 && tvShows.map((tvShow,index) =>
+            tvShow ? <TvShow key={index} tvShow={tvShow} /> : undefined
+          )
+        }
       </div>
     )
   }
