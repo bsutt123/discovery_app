@@ -14,7 +14,7 @@ class TvShowsController < ApplicationController
     #generate response with HTTParty
     response = self.class.get("/tv/#{filter_param}?api_key=#{ENV["MOVIE_API_KEY"]}&region=US&page=#{page}&include_adult=false")
 
-    #parse and render the response 
+    #parse and render the response
     parsed_response = JSON.parse(response.body)
     render json: parsed_response
   end
