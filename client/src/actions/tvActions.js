@@ -6,12 +6,12 @@ export const SEARCH_TV = 'SEARCH_TV';
 export const SET_TV_DETAILS = 'SET_TV_DETAILS';
 export const SET_TV_PAGE = 'SET_TV_PAGE'
 //create actionEmittors
-function updateTvByFilter(filter, tvPage, tv) {
+function updateTvByFilter(filter, page, tv) {
   return {
     type: SET_TV_FILTER,
     filter,
     tv,
-    tvPage,
+    page,
   };
 }
 
@@ -27,6 +27,14 @@ function updateTvBySearch(query, page, tv) {
 function updateTvDetails(tv) {
   return {
     type: SET_TV_DETAILS,
+    tv,
+  }
+}
+
+function updateTvByPage(page, tv) {
+  return {
+    type: SET_TV_PAGE,
+    page,
     tv
   }
 }
@@ -65,11 +73,19 @@ export function setTvBySearch(query) {
 
 export function setTvPage(page) {
   return function (dispatch, getState) {
-    const {filter} = getState().tvFilter;
-    return fetchTvByFilter(filter, page).then(
-      tv => dispatch(updateTvByFilter(filter, tv)),
-      error => console.log(error)
-    )
+    const { query, tvFilter, displayType } = getState();
+    console.log(displayType)
+    if (displayType === 'filter') {
+      return fetchTvByFilter(tvFilter, page).then(
+        tv => dispatch(updateTvByPage(page, tv)),
+        error => console.log(error)
+      )
+    } else {
+      return fetchTvBySearch(query, page).then(
+        tv => dispatch(updateTvByPage(page, tv)),
+        error =>  console.log(error)
+      )
+    }
   }
 }
 
