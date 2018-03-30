@@ -4,20 +4,24 @@ import request from 'superagent';
 export const SET_MOVIES_FILTER = 'SET_MOVIES_FILTER';
 export const SEARCH_MOVIES = 'SEARCH_MOVIES';
 export const UPDATE_MOVIE_DETAILS = 'UPDATE_MOVIE_DETAILS';
+export const SET_MOVIES_PAGE = 'SET_MOVIES_PAGE';
 
 //create actionEmittors
-function updateMoviesByFilter(filter, movies) {
+function updateMoviesByFilter(filter, page, movies) {
   return {
     type: SET_MOVIES_FILTER,
     filter,
-    movies
+    movies,
+    page
   };
 }
 
-function updateMoviesBySearch(query, movies) {
+function updateMoviesBySearch(query, page, movies) {
   return {
     type: SEARCH_MOVIES,
-    movies
+    movies,
+    query,
+    page
   };
 }
 
@@ -28,13 +32,21 @@ function updateMovieDetails(movie) {
   }
 }
 
+function updateMovieByPage(page, movies) {
+  return {
+    type: SET_MOVIES_PAGE,
+    page,
+    movies
+  }
+}
+
 //use functions to make calls to the api
 function fetchMoviesByFilter(filter, page) {
-  return request.get('/api/movies/filter').query({ filter }).then(res => JSON.parse(res.text).results)
+  return request.get('/api/movies/filter').query({ filter, page }).then(res => JSON.parse(res.text).results)
 }
 
 function fetchMoviesBySearch(query, page) {
-  return request.get('/api/movies/search').query({ query }).then(res => JSON.parse(res.text).results)
+  return request.get('/api/movies/search').query({ query, page }).then(res => JSON.parse(res.text).results)
 }
 
 function fetchMovieDetails(id) {
@@ -45,7 +57,7 @@ function fetchMovieDetails(id) {
 export function setMoviesByFilter(filter) {
   return function (dispatch) {
     return fetchMoviesByFilter(filter).then(
-      movies => dispatch(updateMoviesByFilter(filter, movies)),
+      movies => dispatch(updateMoviesByFilter(filter, 1, movies)),
       error => console.log(error)
     )
   }
@@ -53,10 +65,28 @@ export function setMoviesByFilter(filter) {
 
 export function setMoviesBySearch(query) {
   return function (dispatch) {
-    return fetchMoviesBySearch(query).then(
-      movies => dispatch(updateMoviesBySearch(query, movies)),
+    return fetchMoviesBySearch(query, 1).then(
+      movies => dispatch(updateMoviesBySearch(query, 1, movies)),
       error =>  console.log(error)
     )
+  }
+}
+
+export function setMoviePage(page) {
+  return function (dispatch, getState) {
+    console.log(page);
+    const { displayType, moviesFilter, query } = getState();
+    if (displayType === 'filter') {
+      return fetchMoviesByFilter(moviesFilter, page).then(
+        movies =>  dispatch(updateMovieByPage(page, movies)),
+        error => console.log(error)
+      )
+    } else {
+      return fetchMoviesBySearch(query, page).then(
+        movies => dispatch(updateMovieByPage(page, movies)),
+        error => console.log(error)
+      )
+    }
   }
 }
 
